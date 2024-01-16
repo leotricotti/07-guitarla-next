@@ -4,7 +4,7 @@ function Nosotros() {
   return (
     <Layout
       title={"Nosotros"}
-      description={"Blog de música, venta de guitarras y más"}
+      description={"Sobre nosotros, GuitarLA, tienda de música"}
     >
       <h1>Nosotros</h1>
     </Layout>

@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Layout
         title={"Inicio"}
-        description={"Blog de música, venta de guitarras y más"}
+        description={"GuitarLA - Venta de guitarras, blog de música y más"}
       >
         <h1>Inicio</h1>
       </Layout>

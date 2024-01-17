@@ -1,6 +1,6 @@
 import Layout from "../componentes/layout";
 import Guitarra from "../componentes/guitarra";
-import styles from "../styles/tienda.module.css";
+import styles from "../styles/grid.module.css";
 
 function Tienda({ guitarras }) {
   return (
@@ -22,26 +22,13 @@ function Tienda({ guitarras }) {
 
 export default Tienda;
 
-// export async function getStaticProps() {
-//   const respuesta = await fetch(
-//     `${process.env.API_URL}/api/guitars?populate=imagen`
-//   );
-//   const { data: guitarras } = await respuesta.json();
-
-//   console.log(guitarras);
-
-//   return {
-//     props: {
-//       guitarras,
-//     },
-//   };
-// }
-
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const respuesta = await fetch(
     `${process.env.API_URL}/api/guitars?populate=imagen`
   );
   const { data: guitarras } = await respuesta.json();
+
+  console.log(guitarras);
 
   return {
     props: {
@@ -49,3 +36,16 @@ export async function getServerSideProps() {
     },
   };
 }
+
+// export async function getServerSideProps() {
+//   const respuesta = await fetch(
+//     `${process.env.API_URL}/api/guitars?populate=imagen`
+//   );
+//   const { data: guitarras } = await respuesta.json();
+
+//   return {
+//     props: {
+//       guitarras,
+//     },
+//   };
+// }

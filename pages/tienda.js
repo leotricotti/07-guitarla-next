@@ -1,7 +1,8 @@
 import Layout from "../componentes/layout";
-import ListadoGuitarras from "../componentes/listado-guitarras";
+import Guitarra from "../componentes/guitarra";
+import styles from "../styles/tienda.module.css";
 
-function Tienda() {
+function Tienda({ guitarras }) {
   return (
     <Layout
       title={"Tienda Virtuañ"}
@@ -9,7 +10,11 @@ function Tienda() {
     >
       <main className="contenido">
         <h1 className="heading">Nuestra Colección</h1>
-        <ListadoGuitarras />
+        <div className={styles.guitarraGrid}>
+          {guitarras.map((guitarra) => (
+            <Guitarra key={guitarra.id} guitarra={guitarra.attributes} />
+          ))}
+        </div>
       </main>
     </Layout>
   );
@@ -17,13 +22,30 @@ function Tienda() {
 
 export default Tienda;
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const respuesta = await fetch(
+//     `${process.env.API_URL}/api/guitars?populate=imagen`
+//   );
+//   const { data: guitarras } = await respuesta.json();
+
+//   console.log(guitarras);
+
+//   return {
+//     props: {
+//       guitarras,
+//     },
+//   };
+// }
+
+export async function getServerSideProps() {
   const respuesta = await fetch(
-    "http://localhost.localdomain:1337/api/guitars"
+    `${process.env.API_URL}/api/guitars?populate=imagen`
   );
-  const resultado = await respuesta.json();
+  const { data: guitarras } = await respuesta.json();
 
-  console.log(respuesta);
+  return {
+    props: {
+      guitarras,
+    },
+  };
 }
-
-getStaticProps();

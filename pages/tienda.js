@@ -10,7 +10,7 @@ function Tienda({ guitarras }) {
     >
       <main className="contenido">
         <h1 className="heading">Nuestra Colección</h1>
-        <div className={styles.guitarraGrid}>
+        <div className={styles.grid}>
           {guitarras.map((guitarra) => (
             <Guitarra key={guitarra.id} guitarra={guitarra.attributes} />
           ))}
@@ -22,13 +22,11 @@ function Tienda({ guitarras }) {
 
 export default Tienda;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const respuesta = await fetch(
     `${process.env.API_URL}/api/guitars?populate=imagen`
   );
   const { data: guitarras } = await respuesta.json();
-
-  console.log(guitarras);
 
   return {
     props: {
@@ -36,16 +34,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-// export async function getServerSideProps() {
-//   const respuesta = await fetch(
-//     `${process.env.API_URL}/api/guitars?populate=imagen`
-//   );
-//   const { data: guitarras } = await respuesta.json();
-
-//   return {
-//     props: {
-//       guitarras,
-//     },
-//   };
-// }

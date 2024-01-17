@@ -22,14 +22,19 @@
     flex-direction: row;
   }
 }
-
 .navegacion a,
 .copywrite {
   color: var(--white);
   text-decoration: none;
   font-size: 2rem;
   font-weight: 700;
+  transition-property: color;
+  transition-duration: 300ms;
 }
 .copywrite {
   text-align: center;
+}
+
+.navegacion a:hover {
+  color: var(--primary);
 }

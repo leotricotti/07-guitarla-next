@@ -12,7 +12,7 @@ function Header() {
         <div className={`contenido ${styles.barra}`}>
           <Link href={"/"}>
             <Image
-              src="img/logo.svg"
+              src="/img/logo.svg"
               alt="Company logo"
               width={300}
               height={40}

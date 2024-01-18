@@ -19,9 +19,9 @@ export default function Home({ guitarras, posts, curso }) {
             ))}
           </div>
         </main>
-        <section className="contenedor">
-          <h2 className="heading">Nuestros Cursos</h2>
-        </section>
+
+        <Curso curso={curso} />
+
         <section className="contenedor">
           <h2 className="heading">Blog</h2>
           <div className={styles.grid}>

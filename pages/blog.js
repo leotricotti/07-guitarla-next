@@ -1,8 +1,8 @@
 import Layout from "../componentes/layout";
 import Post from "../componentes/post";
+import styles from "../styles/grid.module.css";
 
 function Blog({ posts }) {
-  console.log(posts);
   return (
     <div>
       <Layout
@@ -13,9 +13,11 @@ function Blog({ posts }) {
       >
         <main className="contenedor">
           <h1 className="heading">Blog</h1>
-          {posts.map((post) => {
-            return <Post key={post.id} post={post} />;
-          })}
+          <div className={styles.grid}>
+            {posts.map((post) => {
+              return <Post key={post.id} post={post} />;
+            })}
+          </div>
         </main>
       </Layout>
     </div>

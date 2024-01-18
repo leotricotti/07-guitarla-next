@@ -50,8 +50,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { url } }) {
-  console.log(url);
-
   const respuesta = await fetch(
     `${process.env.API_URL}/api/guitars?filters[url]=${url}&populate=imagen`
   );
@@ -63,18 +61,3 @@ export async function getStaticProps({ params: { url } }) {
     },
   };
 }
-
-// export async function getServerSideProps({ query: { url } }) {
-//   console.log(url);
-
-//   const respuesta = await fetch(
-//     `${process.env.API_URL}/api/guitars?filters[url]=${url}&populate=imagen`
-//   );
-//   const { data: guitarra } = await respuesta.json();
-
-//   return {
-//     props: {
-//       guitarra,
-//     },
-//   };
-// }

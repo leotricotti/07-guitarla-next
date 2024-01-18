@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/guitarra.module.css";
 
 function Guitarra({ guitarra }) {
-  const { nombre, precio, descripcion, imagen, url } = guitarra;
+  const { nombre, precio, descripcion, imagen, url } = guitarra.attributes;
 
   return (
     <div className={styles.guitarra}>

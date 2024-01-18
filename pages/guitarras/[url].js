@@ -25,6 +25,20 @@ function Producto({ guitarra }) {
           <p className={styles.precio}>
             ${precio}.<sup>99</sup>
           </p>
+
+          <form className={styles.formulario}>
+            <label htmlFor="cantidad">Cantidad:</label>
+
+            <select id="cantidad">
+              <option value="0">-- Selecione --</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+
+            <button type={"submit"}>Agregar al carrito</button>
+          </form>
         </div>
       </div>
     </Layout>

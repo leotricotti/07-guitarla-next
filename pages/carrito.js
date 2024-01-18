@@ -1,5 +1,5 @@
 import Layout from "../componentes/layout";
-import styles from "../styles/carrito.modules.css";
+import styles from "../styles/carrito.module.css";
 
 function Carrito() {
   return (
@@ -12,7 +12,7 @@ function Carrito() {
             <h2>Artículos</h2>
           </div>
 
-          <aside>
+          <aside className={styles.resumen}>
             <h3>Resumen del Pedido</h3>
             <p>Total a pagar:</p>
           </aside>
